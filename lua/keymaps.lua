@@ -36,12 +36,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Custom by Ruben
 -- General
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'jj to escape insert mode' })
-vim.keymap.set('i', '<F1>', '<Esc>:bp<CR>')
-vim.keymap.set('i', '<F2>', '<Esc>:bn<CR>')
-vim.keymap.set('i', '<F4>', '<Esc>:cd %:p:h<CR>i')
+vim.keymap.set('i', '<F1>', '<Esc>:BufferPrevious<CR>')
+vim.keymap.set('i', '<F2>', '<Esc>:BufferNext<CR>i')
+vim.keymap.set('i', '<F4>', '<Esc>:cd %:p:h<CR>')
 vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', '<F1>', '<Esc>:bp<CR>')
-vim.keymap.set('n', '<F2>', '<Esc>:bn<CR>')
+vim.keymap.set('n', '<F1>', ':BufferPrevious<CR>')
+vim.keymap.set('n', '<F2>', ':BufferNext<CR>')
 vim.keymap.set('n', '<F4>', ':cd %:p:h<CR>')
 -- Undotree
 vim.keymap.set('n', '<leader>tu', ':UndotreeToggle<CR>', { desc = '[T]oggle [U]ndotree' })
