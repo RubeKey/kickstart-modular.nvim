@@ -37,7 +37,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- General
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'jj to escape insert mode' })
 vim.keymap.set('i', '<F1>', '<Esc>:BufferPrevious<CR>')
-vim.keymap.set('i', '<F2>', '<Esc>:BufferNext<CR>i')
+vim.keymap.set('i', '<F2>', '<Esc>:BufferNext<CR>')
 vim.keymap.set('i', '<F4>', '<Esc>:cd %:p:h<CR>')
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', '<F1>', ':BufferPrevious<CR>')
