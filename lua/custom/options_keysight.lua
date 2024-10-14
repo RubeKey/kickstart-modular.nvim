@@ -33,4 +33,3 @@ local function setup()
 end
 
 setup()
--- return { setup = setup }
