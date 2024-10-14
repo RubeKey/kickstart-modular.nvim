@@ -95,19 +95,19 @@ vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 require 'options'
+require 'custom/options_keysight' -- Load keysight options first, so you can override any settings in your own options
 require 'custom/options'
-require 'custom/options_keysight'
-
--- [[ Basic Keymaps ]]
-require 'keymaps'
-require 'custom/keymaps'
-require 'custom/keymaps_keysight'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
+
+-- [[ Basic Keymaps ]]
+require 'keymaps'
+require 'custom/keymaps_keysight' -- Make keysight keymaps load first. If you break something in your own keymaps, then the keysight ones will still work :)
+require 'custom/keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
