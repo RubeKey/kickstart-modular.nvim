@@ -45,4 +45,20 @@ return {
   {
     'mbbill/undotree',
   },
+  {
+    'junegunn/vim-easy-align',
+    'easics/filenavigation',
+  },
+  {
+    'numToStr/Navigator.nvim',
+    config = function()
+      require('Navigator').setup()
+    end,
+  },
+  {
+    'jghauser/mkdir.nvim',
+  },
+  {
+    'tpope/vim-abolish',
+  },
 }
