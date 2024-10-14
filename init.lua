@@ -100,6 +100,7 @@ require 'custom/options'
 -- [[ Basic Keymaps ]]
 require 'keymaps'
 require 'custom/keymaps'
+require 'custom/keymaps_keysight'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
