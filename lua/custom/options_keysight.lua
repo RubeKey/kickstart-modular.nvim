@@ -30,6 +30,8 @@ local function setup()
 
   local autocmd = vim.api.nvim_create_autocmd
   autocmd({ 'BufRead', 'BufNewFile' }, { pattern = '*.tpp', command = 'set filetype=cpp' })
+  -- read nakfiles as ruby for syntax highlighting reasons
+  autocmd({ 'BufRead', 'BufNewFile' }, { pattern = { '*.nak', 'nakfile*' }, command = 'set filetype=ruby' })
 end
 
 setup()
