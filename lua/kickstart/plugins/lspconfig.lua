@@ -19,7 +19,7 @@ return {
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
-      --
+
       -- LSP stands for Language Server Protocol. It's a protocol that helps editors
       -- and language tooling communicate in a standardized fashion.
       --
@@ -186,6 +186,7 @@ return {
         ruff = {},
         jsonls = {
           settings = {
+            --    args = { '--config =' .. os.getenv 'DIGROOT' .. '/python/ruff.toml' },
             json = {
               format = {
                 enable = true,

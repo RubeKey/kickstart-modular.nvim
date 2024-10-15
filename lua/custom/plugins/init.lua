@@ -3,4 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 -- NOTE: You can add your own
-return {}
+return {
+  'moll/vim-bbye',
+  'nvchad/volt',
+  'nvchad/menu',
+}
