@@ -28,6 +28,18 @@ local function setup()
   -- Show status line on each window
   vim.o.laststatus = 2
 
+  -- Remove trailing whitespace automatically on save
+  vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+    pattern = { '*' },
+    callback = function()
+      local save_cursor = vim.fn.getpos '.'
+      pcall(function()
+        vim.cmd [[%s/\s\+$//e]]
+      end)
+      vim.fn.setpos('.', save_cursor)
+    end,
+  })
+
   local autocmd = vim.api.nvim_create_autocmd
   autocmd({ 'BufRead', 'BufNewFile' }, { pattern = '*.tpp', command = 'set filetype=cpp' })
   -- read nakfiles as ruby for syntax highlighting reasons
