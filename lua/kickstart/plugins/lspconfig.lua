@@ -19,7 +19,7 @@ return {
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
-      --
+
       -- LSP stands for Language Server Protocol. It's a protocol that helps editors
       -- and language tooling communicate in a standardized fashion.
       --
@@ -185,6 +185,7 @@ return {
             },
           },
         },
+        vhdl_ls = {},
         ruff = {
           args = { '--config =' .. root .. '/ruff.toml' },
         },
@@ -214,6 +215,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff',
+        'vhdl_ls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
