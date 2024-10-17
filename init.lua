@@ -93,16 +93,17 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
--- [[ Setting options ]]
-require 'options'
-require 'custom/options_keysight' -- Load keysight options first, so you can override any settings in your own options
-require 'custom/options'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
+
+-- [[ Setting options ]]
+require 'options'
+require 'custom/options_keysight' -- Load keysight options first, so you can override any settings in your own options
+require 'custom/options'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
