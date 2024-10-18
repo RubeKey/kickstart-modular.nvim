@@ -1,9 +1,13 @@
 # Add your custom options here! No changes in the common setup will be placed here, so no merge conflicts!
 
+-- Turn on relative line numbers
+vim.wo.number = true
 vim.wo.relativenumber = true
+
 -- 24bit colors
 vim.opt.termguicolors = true
 
+-- Set up treesitter-context to not take my whole screen when stuff is nested deeply
 require'treesitter-context'.setup{
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 10, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -19,6 +23,7 @@ require'treesitter-context'.setup{
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
+-- Setup noice to pick up most notifications and display them in a much nicer way
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -38,3 +43,5 @@ require("noice").setup({
   },
 })
 
+-- Lualine config
+--require 'lualine_config'

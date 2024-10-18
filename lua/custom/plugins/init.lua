@@ -46,4 +46,10 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
+  { 'HiPhish/rainbow-delimiters.nvim' },
+  { 'utilyre/barbecue.nvim' },
+  --  {
+  -- 'nvim-lualine/lualine.nvim',
+  --dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --},
 }
