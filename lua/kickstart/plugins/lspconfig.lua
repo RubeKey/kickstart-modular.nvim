@@ -213,10 +213,27 @@ return {
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-        'ruff',
-      })
+
+      -- Grab correct ruff version if root is set to a project
+      if root ~= '~/' then
+        -- runs command on a sub-process.
+        local handle = io.popen "pip list --local | grep ruff | grep -o '[0-9.]*' | tr -d '\n'"
+        -- reads command output.
+        local output = handle:read '*a'
+        vim.list_extend(ensure_installed, {
+          'stylua', -- Used to format Lua code
+          {'ruff', version = output},
+          --'ruff@0.11.2', --concatenate version to ruff
+          'vhdl_ls',
+        })
+      else
+        vim.list_extend(ensure_installed, {
+          'stylua', -- Used to format Lua code
+          'ruff',
+          'vhdl_ls',
+        })
+      end
+
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
